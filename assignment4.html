@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Fest Website - Assignment 4</title>
+  <style>
+    /* --- Reset & Base --- */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header, nav, section, footer {
+      padding: 20px;
+      margin: 10px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* --- Navigation with Flexbox --- */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #333;
+      color: #fff;
+      border-radius: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    nav a:hover {
+      background: #555;
+      border-radius: 5px;
+    }
+
+    /* --- Homepage --- */
+    #home {
+      text-align: center;
+    }
+    #home video {
+      margin-top: 15px;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+
+    /* --- Events List --- */
+    #events ul {
+      list-style: square inside;
+    }
+    #events ul li:hover {
+      color: darkblue;
+      cursor: pointer;
+    }
+
+    /* --- Schedule Table --- */
+    #schedule table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #schedule th, #schedule td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    #schedule th {
+      background: #333;
+      color: #fff;
+    }
+    #schedule audio {
+      margin-top: 15px;
+    }
+
+    /* --- Registration Form --- */
+    form input, form button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: darkblue;
+    }
+
+    /* --- Gallery with Grid --- */
+    #gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    #gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    #gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      background: #222;
+      color: #fff;
+    }
+    footer a {
+      color: #ffd700;
+      margin: 0 10px;
+    }
+
+    /* --- Responsive (Mobile First) --- */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#register">Register</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Annual College Fest 2025</h1>
+    <p>Date: 15th - 17th October 2025</p>
+    <p>Welcome to the biggest celebration of talent, creativity, and culture!</p>
+
+    <!-- Video Embed -->
+    <video controls>
+      <source src="sample-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </section>
+
+  <!-- Events -->
+  <section id="events">
+    <h2>Events List</h2>
+    <ul>
+      <li>Music Competition</li>
+      <li>Dance Battle</li>
+      <li>Drama Skit</li>
+      <li>Tech Quiz</li>
+      <li>Art Exhibition</li>
+    </ul>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <h2>Event Schedule</h2>
+    <table>
+      <tr><th>Event</th><th>Date</th><th>Time</th></tr>
+      <tr><td>Music Competition</td><td>15th Oct</td><td>10:00 AM</td></tr>
+      <tr><td>Dance Battle</td><td>15th Oct</td><td>2:00 PM</td></tr>
+      <tr><td>Drama Skit</td><td>16th Oct</td><td>11:00 AM</td></tr>
+      <tr><td>Tech Quiz</td><td>16th Oct</td><td>3:00 PM</td></tr>
+      <tr><td>Art Exhibition</td><td>17th Oct</td><td>1:00 PM</td></tr>
+    </table>
+
+    <!-- Audio Greeting -->
+    <audio controls>
+      <source src="welcome-audio.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </section>
+
+  <!-- Registration -->
+  <section id="register">
+    <h2>Register for Events</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="number" placeholder="Age" min="18" max="40" required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="grid">
+      <img src="img1.jpg" alt="Event 1">
+      <img src="img2.jpg" alt="Event 2">
+      <img src="img3.jpg" alt="Event 3">
+      <img src="img4.jpg" alt="Event 4">
+      <img src="img5.jpg" alt="Event 5">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact & FAQs</h2>
+    <p>Email: fest2025@college.edu</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Follow us on 
+      <a href="#">Instagram</a> | 
+      <a href="#">Facebook</a> | 
+      <a href="#">Twitter</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 College Fest. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
